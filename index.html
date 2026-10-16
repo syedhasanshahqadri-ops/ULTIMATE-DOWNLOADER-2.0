@@ -34,4 +34,6 @@
  <div class="seg" id="tp"><button data-t="video" class="on">Video</button><button data-t="audio">Music</button><button data-t="image">Photo</button></div>
  <div id="qs" class="chips"></div>
  <div class="row"><button class="ghost" id="cx">Cancel</button><button class="go" id="ok">Start download</button></div></dialog>
-<script src="config.js"></script><script src="app.js"></script></body></html>
+<script src="config.js"></script><script src="app.js"></script>
+ <script>if('serviceWorker' in navigator)navigator.serviceWorker.register('/service-worker.js')</script>
+</body></html>
