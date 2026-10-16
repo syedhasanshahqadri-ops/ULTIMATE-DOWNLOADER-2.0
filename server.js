@@ -1,6 +1,7 @@
 const express=require('express'),cors=require('cors'),fs=require('fs'),{execFile}=require('child_process');
 const app=express();app.use(cors());const path=require('path');
-['index.html','style.css','app.js','config.js'].forEach(f=>
+['index.html','style.css','app.js','config.js','manifest.json','service-worker.js','icon.svg','icon-192.png','icon-512.png'].forEach(f=>
+  app.get(f==='index.html'?['/','/index.html']:'/'+f,(q,r)=>r.sendFile(path.join(__dirname,f))));.forEach(f=>
   app.get(f==='index.html'?['/','/index.html']:'/'+f,(q,r)=>r.sendFile(path.join(__dirname,f))));
 const ok=u=>/^https?:\/\//i.test(u||'');
 const NAMES={video:['mp4','video/mp4'],audio:['m4a','audio/mp4'],image:['jpg','image/jpeg']};
